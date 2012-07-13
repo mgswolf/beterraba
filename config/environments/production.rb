@@ -75,8 +75,8 @@ Beterraba::Application.configure do
     domain: "beterrabaninja.com.br",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "beterrabanija.com.br",
-    password: "beterraba123844"
+    user_name: "",
+    password: ""
   }
 
 

@@ -22,8 +22,28 @@ en:
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
     sessions:
+      new:
+        alpha_software: "You are about to use an alpha software."
+        bugs_and_feedback: "Attention, there are still many defects to correct. If something wrong happens to you, please let us know via the Feedback button to the right of your browser. We will work as fast as we can to solve any problem that you reported."
+        bugs_and_feedback_mobile: "Attention, there are still many problems to fix. If something wrong happens to you, please let us know. We will work as fast as we can to solve any problem that you reported."
+        login: "Login"
+        modern_browsers: "only supports modern browsers."
+        password: "Password"
+        remember_me: "Remember me"
+        sign_in: "Sign In"
+        username: "User name"
       signed_in: 'Signed in successfully.'
       signed_out: 'Signed out successfully.'
+    shared:
+      links:
+        forgot_your_password: "Forgot your password?"
+        receive_confirmation: "Not received confirmation instructions?"
+        receive_unlock: "Not received instructions unlock?"
+        sign_in: "Sign In"
+        sign_up: "sign Up"
+        sign_up_closed: "Open records are closed at this time."
+      mail_signup_form:
+        sign_up_for_an_invite: "Register to receive an invitation!"
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'
