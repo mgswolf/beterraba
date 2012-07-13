@@ -1,4 +1,14 @@
 pt-BR:
+  actions:
+    back: 'Voltar'
+    create: 'Cadastrar'
+    edit: 'Editar'
+    new:
+      male: 'Novo'
+      female: 'Nova'
+    save: 'Salvar'
+    update: 'Atualizar'
+
   date:
     abbr_day_names:
     - Dom
@@ -205,3 +215,16 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+    models:
+      user:
+        one: 'Usuário'
+        other: 'Usuários'
+    attributes:
+      user:
+        name: 'Nome'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirmação Senha'
+        remember_me: 'Lembrar me'
+        current_password: 'Senha atual'
+

@@ -30,19 +30,19 @@ end
 def sign_up
   delete_user
   visit '/users/sign_up'
-  fill_in "Name", :with => @visitor[:name]
+  fill_in I18n.t('activerecord.attributes.user.name'), :with => @visitor[:name]
   fill_in "Email", :with => @visitor[:email]
-  fill_in "Password", :with => @visitor[:password]
-  fill_in "Password confirmation", :with => @visitor[:password_confirmation]
-  click_button "Sign up"
+  fill_in I18n.t('activerecord.attributes.user.password'), :with => @visitor[:password]
+  fill_in I18n.t('activerecord.attributes.user.password_confirmation'), :with => @visitor[:password_confirmation]
+  click_button I18n.t('devise.registrations.sign_up')
   find_user
 end
 
 def sign_in
   visit '/users/sign_in'
   fill_in "Email", :with => @visitor[:email]
-  fill_in "Password", :with => @visitor[:password]
-  click_button "Sign in"
+  fill_in I18n.t('activerecord.attributes.user.password'), :with => @visitor[:password]
+  click_button I18n.t('devise.shared.links.sign_in')
 end
 
 ### GIVEN ###
@@ -123,9 +123,9 @@ end
 
 When /^I edit my account details$/ do
   click_link "Edit account"
-  fill_in "Name", :with => "newname"
-  fill_in "Current password", :with => @visitor[:password]
-  click_button "Update"
+  fill_in I18n.t('activerecord.attributes.user.name'), :with => "newname"
+  fill_in I18n.t('activerecord.attributes.user.current_password'), :with => @visitor[:password]
+  click_button I18n.t('actions.update')
 end
 
 When /^I look at the list of users$/ do
@@ -146,43 +146,43 @@ Then /^I should be signed out$/ do
 end
 
 Then /^I see an unconfirmed account message$/ do
-  page.should have_content "You have to confirm your account before continuing."
+  page.should have_content I18n.t('devise.failure.unconfirmed')
 end
 
 Then /^I see a successful sign in message$/ do
-  page.should have_content "Signed in successfully."
+  page.should have_content I18n.t('devise.sessions.signed_in')
 end
 
 Then /^I should see a successful sign up message$/ do
-  page.should have_content "Welcome! You have signed up successfully."
+  page.should have_content I18n.t('devise.registrations.signed_up')
 end
 
 Then /^I should see an invalid email message$/ do
-  page.should have_content "Email is invalid"
+  page.should have_content I18n.t('activerecord.attributes.user.email')+I18n.t('errors.messages.invalid')
 end
 
 Then /^I should see a missing password message$/ do
-  page.should have_content "Password can't be blank"
+  page.should have_content  (I18n.t('activerecord.attributes.user.password')+I18n.t('errors.messages.blank'))
 end
 
 Then /^I should see a missing password confirmation message$/ do
-  page.should have_content "Password doesn't match confirmation"
+  page.should have_content I18n.t('errors.messages.confirmation')
 end
 
 Then /^I should see a mismatched password message$/ do
-  page.should have_content "Password doesn't match confirmation"
+  page.should have_content I18n.t('activerecord.attributes.user.password')+I18n.t('errors.messages.confirmation')
 end
 
 Then /^I should see a signed out message$/ do
-  page.should have_content "Signed out successfully."
+  page.should have_content I18n.t('devise.sessions.signed_out')
 end
 
 Then /^I see an invalid login message$/ do
-  page.should have_content "Invalid email or password."
+  page.should have_content I18n.t('devise.failure.invalid')
 end
 
 Then /^I should see an account edited message$/ do
-  page.should have_content "You updated your account successfully."
+  page.should have_content I18n.t('devise.registrations.updated')
 end
 
 Then /^I should see my name$/ do
